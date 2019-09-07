@@ -1,0 +1,135 @@
+{
+  "type":"userProfile",
+  "version": "v1",
+  "fields":[
+    {
+      "name":"firstName",
+      "type":"textField",
+      "label":{
+        "en":"Firstname(s)",
+        "de":"Vorname(n)"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"",
+        "de":""
+      },
+      "help":{
+        "en":"Enter your first name(s).",
+        "de":"Bitte geben Sie Ihre Vornamen an."
+      },
+      "isValid":false,
+      "condition":true
+    },
+    {
+      "name":"lastName",
+      "type":"textField",
+      "label":{
+        "en":"Lastname(s)",
+        "de":"Nachname(n)"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"",
+        "de":""
+      },
+      "help":{
+        "en":"Enter your last name(s).",
+        "de":"Bitte geben Sie Ihre Nachnamen an."
+      },
+      "isValid":false,
+      "condition":true
+    },
+    {
+      "name":"institute",
+      "type":"textField",
+      "label":{
+        "en":"Institute",
+        "de":"Institut"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"",
+        "de":""
+      },
+      "help":{
+        "en":"Please specify at what institute you are working. <br><br>Adminsitration staff can provide the short code of their department.",
+        "de":"Für welches Institut arbeiten Sie. <br><br>Verwaltungsangestellte können die Abkürzung ihrer Abteilung angeben."
+      },
+      "isValid":false,
+      "condition":true
+    },
+    {
+      "name":"position",
+      "type":"radioGroup",
+      "label":{
+        "en":"Position",
+        "de":"Position"
+      },
+      "help":{
+        "en":"",
+        "de":""
+      },
+      "isValid":false,
+      "value":"",
+      "condition": true,
+      "options":[
+        {
+          "name":"employee",
+          "label":{
+            "en":"Employee",
+            "de":"Mitarbeiter"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        },
+        {
+          "name":"graduateStudent",
+          "label":{
+            "en":"Graduate student",
+            "de":"Promotionsstudent(in)"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        },
+        {
+          "name":"student",
+          "label":{
+            "en":"Student",
+            "de":"Student(in)"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        }
+      ]
+    },
+    {
+      "name":"phone",
+      "type":"textField",
+      "label":{
+        "en":"Telephone",
+        "de":"Telefon"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"",
+        "de":""
+      },
+      "help":{
+        "en":"Enter your university telephone number. <br><br>The last 4 digits are enough.",
+        "de":"Bitte geben Sie Ihre Telefonnummer an. <br><br>Die letzten 4 Ziffern reichen aus."
+      },
+      "isValid":false,
+      "condition":true,
+      "validation": {
+        "type": "number"
+      }
+    }
+  ]
+}

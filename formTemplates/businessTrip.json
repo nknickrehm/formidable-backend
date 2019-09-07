@@ -1,0 +1,714 @@
+{
+  "type":"businessTrip",
+  "version": "v1",
+  "pdfFiles": [
+    {
+      "url": "Dienstreiseantrag_01_2018_beschreibbar.pdf",
+      "condition": true
+    },
+    {
+      "url": "Flugkosten-Anlage1.pdf",
+      "condition": [{
+        "field": "airplane",
+        "value": true
+      }]
+    },
+    {
+      "url": "Flugkosten-Anlage2.pdf",
+      "condition": [{
+        "field": "airplane",
+        "value": true
+      }]
+    },
+    {
+      "url": "Flugkosten-Anlage3.pdf",
+      "condition": [{
+        "field": "airplane",
+        "value": true
+      }]
+    },
+    {
+      "url": "Reisekostenvorschuss_01_2017_beschreibbar.pdf",
+      "condition": [{
+        "field": "drittmittel",
+        "value": true
+      }]
+    },
+    {
+      "url": "Anlage_4-neu.pdf",
+      "condition": [{
+        "field": "drittmittel",
+        "value": true
+      }]
+    }
+  ],
+  "fields":[
+    {
+      "name":"destinations",
+      "type":"textField",
+      "label":{
+        "en":"Destination(s)",
+        "de":"Reiseziel(e)"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"Berlin, Vienna, Toronto, ...",
+        "de":"Berlin, Wien, Toronto"
+      },
+      "help":{
+        "en":"Enter all cities in which you will be staying during the business trip. <br><br>Use a comma as limiter.",
+        "de":"Bitte geben Sie alle Städte an, in denen Sie sich im Verlauf der Dienstreise aufhalten werden. <br><br>Nutzen Sie ein Komma als Trennsymbol."
+      },
+      "isValid":false,
+      "condition":true
+    },
+    {
+      "name":"begin",
+      "type":"datePicker",
+      "label":{
+        "en":"Begin (Date)",
+        "de":"Beginn (Datum)"
+      },
+      "value":null,
+      "placeholder":{
+        "en":"DD MMM YYYY",
+        "de":"DD MMM YYYY"
+      },
+      "help":{
+        "en":"The start date of the business trip. <br><br><u>You do not need to travel before 6 AM.</u>",
+        "de":"Das Startdatum der Dienstreise. <br><br><u>Sie müssen eine Reise nicht vor 6 Uhr morgens antreten.</u>"
+      },
+      "isValid":false,
+      "condition":true
+    },
+    {
+      "name":"end",
+      "type":"datePicker",
+      "label":{
+        "en":"End (Date)",
+        "de":"Ende (Datum)"
+      },
+      "value":null,
+      "placeholder":{
+        "en":"DD MMM YYYY",
+        "de":"DD MMM YYYY"
+      },
+      "help":{
+        "en":"The end date of the business trip. <br><br><u>You do not need to travel after 11:59 PM.</u>",
+        "de":"Das Enddatum der Dienstreise. <br><br><u>Sie müssen eine Reise nicht nach 23:59 beenden.</u>"
+      },
+      "isValid":false,
+      "condition":true
+    },
+    {
+      "name":"reason",
+      "type":"textField",
+      "label":{
+        "en":"Reason for the trip",
+        "de":"Anlass der Reise"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"XYZ Conference",
+        "de":"Konferenz XYZ"
+      },
+      "help":{
+        "en":"The reason for the business trip, or the name of the event you want to attend.",
+        "de":"Der Grund für die Dienstreise, oder der Name der Veranstaltung, an der Sie teilnehmen wollen."
+      },
+      "isValid":false,
+      "condition":true
+    },
+    {
+      "name":"interest",
+      "type":"textField",
+      "label":{
+        "en":"Official purpose",
+        "de":"Dienstliches Interesse"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"",
+        "de":""
+      },
+      "help":{
+        "en":"The official purpose behind the business trip. What exactly are you doing at this event?",
+        "de":"Das dienstliche Interesse hinter der Dienstreise. Aus welchem Grund nehmen Sie an der Veranstaltung teil?"
+      },
+      "isValid":false,
+      "condition":true
+    },
+    {
+      "name":"travelWith",
+      "type":"multiSelect",
+      "label":{
+        "en":"Used transportation",
+        "de":"Genutzte Verkehrsmittel"
+      },
+      "help":{
+        "en":"Please select all kinds of transportation you will use during the business trip. <br><br>Make sure to keep all bills and tickets if you want a refund of your travel costs.",
+        "de":"Bitte wählen Sie alle Verkehrsmittel, die Sie voraussichtlich während der Dienstreise nutzen werden. <br><br>Wenn Sie die Reise abrechnen wollen, sollten Sie darauf achten, alle Rechnungen, Fahrkarten und ähnliches aufzubewahren."
+      },
+      "isValid":false,
+      "condition":true,
+      "options":[
+        {
+          "name":"publicTransportation",
+          "label":{
+            "en":"Bus / train",
+            "de":"Bus / Bahn"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          },
+          "value":false
+        },
+        {
+          "name":"privateCar",
+          "label":{
+            "en":"Private car",
+            "de":"Privat-PKW"
+          },
+          "help":{
+            "en":"If possible, please consider using public transportation.",
+            "de":"Wenn möglich, nutzen Sie bitte Bus oder Bahn."
+          },
+          "value":false
+        },
+        {
+          "name":"workCar",
+          "label":{
+            "en":"Working car",
+            "de":"Arbeits-PKW"
+          },
+          "help":{
+            "en":"If possible, please consider using public transportation.",
+            "de":"Wenn möglich, nutzen Sie bitte Bus oder Bahn."
+          },
+          "value":false
+        },
+        {
+          "name":"rentedCar",
+          "label":{
+            "en":"Rental car / Taxi",
+            "de":"Mietwagen / Taxi"
+          },
+          "help":{
+            "en":"<b><u>You need to contact the administration if you are planning to use a rented car or taxi!</u></b>",
+            "de":"<b><u>Sie müssen die Verwaltung kontaktieren um eine Erlaubnis zur Nutzung eines Mietwagens oder eines Taxis zu bekommen!</u></b>"
+          },
+          "value":false
+        },
+        {
+          "name":"airplane",
+          "label":{
+            "en":"Airplane",
+            "de":"Flugzeug"
+          },
+          "help":{
+            "en":"<b><u>You need to fill out additional forms by hand (sorry for that...) BUT they will be automatically attached to your PDF file at the end!</u></b>",
+            "de":"<b><u>Sie müssen im Anschluss ein paar zusätzliche Formulare per Hand ausfüllen (sorry dafür...), aber die Formulare werden automatisch an Ihre PDF-Datei angehängt!</u></b>"
+          },
+          "value":false
+        },
+        {
+          "name":"stattAuto",
+          "label":{
+            "en":"Statt Auto",
+            "de":"Statt Auto"
+          },
+          "help":{
+            "en":"For more information about Statt-Auto please visit <a href='https://www.stattauto-hl.de' target='_blank'>https://www.stattauto-hl.de</a>",
+            "de":"Weitere Informationen zu Statt-Auto finden Sie unter <a href='https://www.stattauto-hl.de' target='_blank'>https://www.stattauto-hl.de</a>"
+          },
+          "value":false
+        }
+      ]
+    },
+    {
+      "name":"bahncard",
+      "type":"radioGroup",
+      "label":{
+        "en":"Ownership of a BahnCard",
+        "de":"Besitz einer BahnCard"
+      },
+      "help":{
+        "en":"Do you own a BahnCard?",
+        "de":"Besitzen Sie eine BahnCard?"
+      },
+      "isValid":false,
+      "value":"",
+      "condition":[
+        {
+          "field":"publicTransportation",
+          "value":true
+        }
+      ],
+      "options":[
+        {
+          "name":"yes",
+          "label":{
+            "en":"Yes",
+            "de":"Ja"
+          },
+          "help":{
+            "en":"Please provide more information about the BahnCard.",
+            "de":"Bitte geben Sie weitere Informationen zu der BahnCard an."
+          }
+        },
+        {
+          "name":"no",
+          "label":{
+            "en":"No",
+            "de":"Nein"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        }
+      ]
+    },
+    {
+      "name":"whichBahncard",
+      "type":"buttonSelect",
+      "label":{
+        "en":"Description of the BahnCard",
+        "de":"Bezeichnung der BahnCard"
+      },
+      "value":"",
+      "help":{
+        "en":"What BahnCard do you own?",
+        "de":"Welche BahnCard besitzen Sie?"
+      },
+      "condition":[
+        {
+          "field":"bahncard",
+          "value":"yes"
+        }
+      ],
+      "options":[
+        {
+          "name":"BahnCard 25",
+          "label":{
+            "en":"BahnCard 25",
+            "de":"BahnCard 25"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        },
+        {
+          "name":"BahnCard 50",
+          "label":{
+            "en":"BahnCard 50",
+            "de":"BahnCard 50"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        },
+        {
+          "name":"BahnCard 100",
+          "label":{
+            "en":"BahnCard 100",
+            "de":"BahnCard 100"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        }
+      ],
+      "isValid":false
+    },
+    {
+      "name":"haveFellowTravelers",
+      "type":"radioGroup",
+      "label":{
+        "en":"Fellow travelers",
+        "de":"Mitreisende"
+      },
+      "help":{
+        "en":"Will there be any fellow travelers?",
+        "de":"Gibt es weitere Mitreisende?"
+      },
+      "isValid":false,
+      "value":"",
+      "condition":true,
+      "options":[
+        {
+          "name":"yes",
+          "label":{
+            "en":"Yes",
+            "de":"Ja"
+          },
+          "help":{
+            "en":"Please provide more information about the fellow travelers.",
+            "de":"Bitte geben Sie weitere Informationen zu den Mitreisenden an."
+          }
+        },
+        {
+          "name":"no",
+          "label":{
+            "en":"No",
+            "de":"Nein"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        }
+      ]
+    },
+    {
+      "name":"fellowTravelers",
+      "type":"textField",
+      "label":{
+        "en":"Name of all fellow travelers",
+        "de":"Namen der Mitreisenden"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"",
+        "de":""
+      },
+      "help":{
+        "en":"Please provide the name of all fellow travelers. <br><br>Use a comma as delimiter.",
+        "de":"Bitte geben Sie die Namen aller Mitreisenden an. <br><br>Nutzen Sie ein Komma als Trennsymbol."
+      },
+      "isValid":false,
+      "condition":[
+        {
+          "field":"haveFellowTravelers",
+          "value":"yes"
+        }
+      ]
+    },
+    {
+      "name":"fellowTravelersAre",
+      "type":"radioGroup",
+      "label":{
+        "en":"Relation to the fellow travelers",
+        "de":"Beziehung zu den Mitreisenden"
+      },
+      "help":{
+        "en":"How would you descripe your relation towards the fellow travelers?",
+        "de":"Wie würden Sie Ihre Beziehung zu den Mitreisenden beschreiben?"
+      },
+      "isValid":false,
+      "value":"",
+      "condition":[
+        {
+          "field":"haveFellowTravelers",
+          "value":"yes"
+        }
+      ],
+      "options":[
+        {
+          "name":"work",
+          "label":{
+            "en":"Work colleagues",
+            "de":"Arbeitskollegen"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        },
+        {
+          "name":"private",
+          "label":{
+            "en":"Friends / family",
+            "de":"Freunde / Familie"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        }
+      ]
+    },
+    {
+      "name":"privateTrip",
+      "type":"radioGroup",
+      "label":{
+        "en":"Private trip",
+        "de":"Privatreise"
+      },
+      "help":{
+        "en":"Will the trip be connected to a private trip (maximum of 5 work days)?",
+        "de":"Ist die Dienstreise mit einer privaten Reise verbunden (maximal 5 Arbeitstage)?"
+      },
+      "isValid":false,
+      "value":"",
+      "condition":true,
+      "options":[
+        {
+          "name":"yes",
+          "label":{
+            "en":"Yes",
+            "de":"Ja"
+          },
+          "help":{
+            "en":"<u><b>You will need to fill out an application for vacation by hand.</b></u>",
+            "de":"<u><b>Sie müssen zusätzlich einen Urlaubsantrag ausfüllen.</b></u>"
+          },
+          "value":false
+        },
+        {
+          "name":"no",
+          "label":{
+            "en":"No",
+            "de":"Nein"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          },
+          "value":false
+        }
+      ]
+    },
+    {
+      "name":"privateTripInformation",
+      "type":"textField",
+      "label":{
+        "en":"Date and localtion of the private trip",
+        "de":"Datum und Ort der Privatreise"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"",
+        "de":""
+      },
+      "help":{
+        "en":"Please provide date and location of the private trip. <br><br><u><b>You will need to fill out the application for vacation by hand.</b></u>",
+        "de":"Bitte geben Sie Ort und Datum der privaten Reise an. <br><br><u><b>Sie müssen den Urlaubsantrag seperat und per Hand ausfüllen.</b></u>"
+      },
+      "condition":[
+        {
+          "field":"privateTrip",
+          "value":"yes"
+        }
+      ],
+      "isValid":false
+    },
+    {
+      "name":"wantRefund",
+      "type":"radioGroup",
+      "label":{
+        "en":"Refund the travel costs?",
+        "de":"Sollen die Reisekosten erstattet werden?"
+      },
+      "help":{
+        "en":"You can specify the way the costs will be refunded in the following questions. In any case, make sure to keep all bills and tickets.",
+        "de":"Die Art der Kostenerstattung kann in den nachfolgenden Fragen festegelegt werden. Bewahren Sie in jedem Fall alle Rechnungen, Belege, etc. auf."
+      },
+      "isValid":false,
+      "value":"",
+      "condition":true,
+      "options":[
+        {
+          "name":"yes",
+          "label":{
+            "en":"Yes",
+            "de":"Ja"
+          },
+          "help":{
+            "en":"To apply for an advance, you need to provide further information about the estimated travel costs.",
+            "de":"Um einen Vorschuss zu beantragen, müssen Sie nähere Informationen zu den erwarteten Kosten angeben."
+          },
+          "value":false
+        },
+        {
+          "name":"no",
+          "label":{
+            "en":"No",
+            "de":"Nein"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          },
+          "value":false
+        }
+      ]
+    },
+    {
+      "name":"refundWith",
+      "type":"multiSelect",
+      "label":{
+        "en":"Refund options",
+        "de":"Arten der Reisekostenerstattung"
+      },
+      "help":{
+        "en":"Check all that apply. ",
+        "de":"Bitte wählen Sie, wie die Reisekosten erstattet werden sollen."
+      },
+      "condition":[
+        {
+          "field":"wantRefund",
+          "value":"yes"
+        }
+      ],
+      "isValid":false,
+      "options":[
+        {
+          "name":"advance",
+          "label":{
+            "en":"Advance",
+            "de":"Vorschuss"
+          },
+          "help":{
+            "en":"To apply for an advance, you need to provide further information about the estimated travel costs. <br><br><u><b>You will need to fill out the application for the advance by hand.</b></u>",
+            "de":"Um einen Vorschuss zu beantragen, müssen Sie nähere Informationen zu den erwarteten Kosten angeben. <br><br><u><b>Sie müssen den Antrag auf Reisekostenvorschuss seperat und per Hand ausfüllen.</b></u>"
+          },
+          "value":false
+        },
+        {
+          "name":"regularRefund",
+          "label":{
+            "en":"Regular refund",
+            "de":"Reisekostenabrechnung"
+          },
+          "help":{
+            "en":"After the business trip you have 6 month to apply for the refund.",
+            "de":"Nach der Dienstreise haben Sie 6 Monate Zeit, die Dienstreise abzurechnen."
+          },
+          "value":false
+        },
+        {
+          "name":"thirdParty",
+          "label":{
+            "en":"Third party",
+            "de":"Von dritter Stelle"
+          },
+          "help":{
+            "en":"To apply for an advance, you need to provide further information about the estimated travel costs.",
+            "de":"Um einen Vorschuss zu beantragen, müssen Sie nähere Informationen zu den erwarteten Kosten angeben."
+          },
+          "value":false
+        },
+        {
+          "name":"drittmittel",
+          "label":{
+            "en":"Drittmittel",
+            "de":"Drittmittel"
+          },
+          "help":{
+            "en":"<u><b>You will need to fill out the application for refund through 'Drittmittel'.</b></u>",
+            "de":"<u><b>Sie müssen zusätzlich das Formular zur Kostenerstattung aus Drittmitteln ausfüllen.</b></u>"
+          },
+          "value":false
+        }
+      ]
+    },
+    {
+      "name":"advanceSum",
+      "type":"textField",
+      "label":{
+        "en":"Advance amount",
+        "de":"Höhe des Vorschusses"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"",
+        "de":""
+      },
+      "help":{
+        "en":"Please provide the amount of advance you need. (Only possible if total costs exceed 200€)",
+        "de":"Bitte geben Sie die Höhe des Vorschusses an, den Sie beantragen wollen. (Erst ab 200€ Reisekosten möglich)"
+      },
+      "condition":[
+        {
+          "field":"advance",
+          "value":true
+        }
+      ],
+      "isValid":false,
+      "validation": {
+        "type": "number"
+      }
+    },
+    {
+      "name":"completeRefund",
+      "type":"radioGroup",
+      "label":{
+        "en":"Third party part",
+        "de":"Anteil durch dritte Stelle"
+      },
+      "help":{
+        "en":"Will the thir party contribute the full travel costs?",
+        "de":"Übernimmt die dritte Stelle sämtliche Reisekosten?"
+      },
+      "condition":[
+        {
+          "field":"wantRefund",
+          "value":"yes"
+        },
+        {
+          "field":"thirdParty",
+          "value":true
+        }
+      ],
+      "isValid":false,
+      "value":"",
+      "options":[
+        {
+          "name":"yes",
+          "label":{
+            "en":"Yes",
+            "de":"Ja"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        },
+        {
+          "name":"no",
+          "label":{
+            "en":"No",
+            "de":"Nein"
+          },
+          "help":{
+            "en":"",
+            "de":""
+          }
+        }
+      ]
+    },
+    {
+      "name":"thirdPartyName",
+      "type":"textField",
+      "label":{
+        "en":"Third Party name",
+        "de":"Zuwendungsgeber"
+      },
+      "value":"",
+      "placeholder":{
+        "en":"",
+        "de":""
+      },
+      "help":{
+        "en":"Please provide the name of the third party.",
+        "de":"Bitte geben Sie den Zuwendungsgeber an."
+      },
+      "condition":[
+        {
+          "field":"wantRefund",
+          "value":"yes"
+        },
+        {
+          "field":"thirdParty",
+          "value":true
+        }
+      ],
+      "isValid":false
+    }
+  ]
+}
