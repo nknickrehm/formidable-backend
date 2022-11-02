@@ -13,7 +13,7 @@
     "debug": "~2.6.9",
     "express": "^4.17.1",
     "fill-pdf": "^1.1.0",
-    "hummus": "^1.0.83",
+    "hummus": "^1.0.111",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "memory-streams": "^0.1.3",
